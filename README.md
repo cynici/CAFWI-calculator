@@ -6,25 +6,27 @@ A docker image for running the Canadian Fire Warning Index calculator using Pyth
 
 * Create `docker-compose.yml`
 
+** Set `RUNUSER_UID` to your linux uid value to avoid running container as root user
+
 ```
 version: '2.2'
 services:
-  pyfwi:
+  cafwi:
     build: ./
     cpus: 2
     mem_limit: 64m
     environment:
       - RUNUSER_UID=1000
-      #- SENTRY_DSN=
     volumes:
       - ./:/home/runuser
     working_dir: /home/runuser
 ```
 
-* Refer to https://github.com/Terranex/pyfwi/tree/master
+* Refer to https://github.com/Terranex/pyfwi/tree/master on how to create a CSV file containing a batch of test data
 
-## Sample data for FWI.py
+* `docker-compose run --rm cafwi FWI.py mydata.csv`
+
+## Reference sample data
 
 `/tmp/pyfwi-master/testBatch.csv`
-
 
