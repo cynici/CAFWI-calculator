@@ -1,6 +1,9 @@
 # Canadian Fire Warning Index calculator
 
-A docker image for running the Canadian Fire Warning Index calculator using Python3
+A docker image for running the Canadian Fire Warning Index calculator using Python3. It can use any Docker base image that provides the following:
+
+- Python 3
+- Numpy
 
 ## Usage
 
